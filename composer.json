@@ -1,0 +1,19 @@
+{
+  "name": "finport/ExternalData",
+  "type": "library",
+  "authors": [{
+    "name": "Andrew",
+    "email": "kpi_lithium@gmail.com",
+    "role": ""
+  }],
+  "require": {
+    "php": "~7.1",
+    "yiisoft/yii2": "~2.0"
+
+  },
+  "autoload": {
+    "psr-4": {
+      "epo\\": "epo/"
+    }
+  }
+}
