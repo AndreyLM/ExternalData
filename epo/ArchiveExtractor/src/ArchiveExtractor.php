@@ -11,19 +11,25 @@ namespace epo\FileManager\src;
 
 use ZipArchive;
 
-class FileManager
+class ArchiveExtractor
 {
-    public $dir;
+    public $path;
 
     public function extract($zipPath)
     {
         $zip = new ZipArchive;
         $res = $zip->open($zipPath);
+
+        $destination = '/'.trim($this->path.'/').'/'.time();
+
         if ($res === TRUE) {
-            $zip->extractTo('/myzips/extract_path/');
-            $zip->close();
+            $zip->extractTo($destination);
         } else {
-            echo 'doh!';
+            return false;
         }
+        $zip->close();
+
+        return $destination;
     }
+
 }
